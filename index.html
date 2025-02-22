@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
-            color: #333333; /* Changed all default black text to light black */
+            color: #333333; /* Default light black text */
         }
 
         body {
@@ -74,7 +74,7 @@
 
         .student-info h2 {
             font-size: 1.2rem;
-            color: #333333; /* Changed from #333 to maintain consistency */
+            color: #333333;
             margin-bottom: 0.3rem;
         }
 
@@ -105,7 +105,7 @@
             top: 0;
             bottom: 0;
             width: 5px;
-            background-color: #64b5f6; /* Changed from #1976d2 to light blue */
+            background-color: #64b5f6; /* Light blue */
             border-radius: 8px 0 0 8px;
         }
 
@@ -160,12 +160,12 @@
             padding: 0.3rem 0.6rem;
             border-radius: 3px;
             font-size: 0.8rem;
-            white-space: nowrap;
+            white-space: nowrap; /* Default for larger screens */
         }
 
         .status-approved {
-            color: #4CAF50;
-            font-weight: bold;
+            color: #4CAF50; /* Green color restored */
+            font-weight: normal; /* Normal weight, not bold */
         }
 
         .status-rejected {
@@ -174,15 +174,21 @@
         }
 
         .hostel-info {
-            color: #064d6a; /* Changed from #1976d2 to light blue */
+            color: #333333; /* Light black text */
             font-size: 0.8rem;
+            background: #ffffff; /* White background for the box */
+            padding: 0.2rem 0.5rem; /* Padding for box effect */
+            display: inline-block; /* Wraps the text only */
+            border-radius: 3px; /* Slight rounding */
+            line-height: 1.2;
+            text-align: left; /* Align text to the left */
         }
 
         tbody tr {
             height: 40px;
         }
         tbody tr:nth-child(odd) {
-            background: rgba(242, 242, 242, 255);
+            background: rgba(242, 242, 242, 255); /* Grey background for odd rows */
         }
 
         td:nth-child(4), th:nth-child(4) {
@@ -197,7 +203,7 @@
             padding-right: 1rem;
         }
 
-        /* Responsive Design */
+        /* Responsive Design for Phone */
         @media (max-width: 768px) {
             .profile-section {
                 flex-direction: row;
@@ -231,50 +237,61 @@
             }
 
             th, td {
-                padding: 0.3rem;
+                padding: 0.5rem 0.3rem; /* Consistent padding for alignment */
                 font-size: 14px;
                 line-height: 1.1;
+                vertical-align: top; /* Align all content to top */
             }
 
             th {
                 background: #f8f9fa;
                 font-weight: bold;
                 font-size: 14px;
-                vertical-align: top;
             }
 
             .day-out {
                 background: #ff9800;
                 color: white;
-                padding: 0.2rem 0.4rem;
+                padding: 0.3rem 0.5rem; /* Match hostel-info padding */
                 border-radius: 3px;
                 font-size: 12px;
-                white-space: normal;
-                display: inline-block;
-                max-width: 60px;
+                white-space: pre-line; /* Respect <br> for DAY<br>OUT */
+                display: block; /* Stack DAY and OUT vertically */
+                line-height: 1.4; /* Consistent spacing */
+                text-align: center; /* Center align DAY and OUT */
             }
 
             .status-approved {
-                color: #4CAF50;
-                font-weight: bold;
+                color: #4CAF50; /* Green color restored */
+                font-weight: normal; /* Normal weight, not bold */
                 font-size: 14px;
-            }
-
-            .status-rejected {
-                color: #e53935;
-                font-weight: bold;
-                font-size: 14px;
+                display: block; /* Ensure APPROVED is on its own line */
+                margin-bottom: 0.2rem; /* Small gap before hostel-info */
             }
 
             .hostel-info {
-                color: #333333; /* Changed from #000000 to light black */
-                font-size: 12px;
-                line-height: 1.2;
-                font-weight: normal;
+                color: #333333; /* Explicitly light black text */
+                font-size: 12px; /* Adjusted for phone readability */
+                background: #effaf8; /* White background */
+                padding: 0.3rem 0.5rem; /* Match day-out padding */
+                display: block; /* Enforce line breaks */
+                min-width: 100px; /* Wide enough for stacking */
+                border-radius: 3px; /* Slight rounding */
+                line-height: 1.4; /* Consistent spacing */
+                text-align: left; /* Align text to the left */
+                white-space: pre-line; /* Respect <br> tags */
             }
 
             td {
                 word-wrap: break-word;
+            }
+
+            td:nth-child(2) { /* Leave Type column */
+                padding-top: 0.5rem; /* Consistent top padding */
+            }
+
+            td:nth-child(3) { /* Status column */
+                padding-top: 0.5rem; /* Consistent top padding */
             }
 
             td:nth-child(4), th:nth-child(4) {
@@ -297,7 +314,8 @@
             }
 
             tbody tr {
-                height: 35px;
+                height: auto; /* Allow rows to expand */
+                min-height: 60px; /* Increased min-height for more space */
             }
         }
     </style>
@@ -345,8 +363,8 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>22-FEB-<br>2025<br>(7:30 AM<br>TO 5:00<br>PM)</td>
                             <td>CHANDIGARH</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -354,8 +372,8 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>21-FEB-<br>2025<br>(4:50 PM<br>TO 5:30<br>PM)</td>
                             <td>HAIRCUT</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -363,8 +381,8 @@
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>18-JAN-<br>2025<br>(8:20 AM<br>TO 6:00<br>PM)</td>
                             <td>OUTSIDE VISIT</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -372,8 +390,8 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>16-JAN-<br>2025<br>(4:20 PM<br>TO 5:30<br>PM)</td>
                             <td>SHOPPING</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -381,8 +399,8 @@
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>14-JAN-<br>2025<br>(4:30 PM<br>TO 5:15<br>PM)</td>
                             <td>MANDIR</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -390,8 +408,8 @@
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>13-JAN-<br>2025<br>(4:40 PM<br>TO 5:30<br>PM)</td>
                             <td>OUTSIDE</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -399,8 +417,8 @@
                         </tr>
                         <tr>
                             <td>7</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>11-JAN-<br>2025<br>(4:35 PM<br>TO 5:30<br>PM)</td>
                             <td>OUTSIDE</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
@@ -408,8 +426,8 @@
                         </tr>
                         <tr>
                             <td>8</td>
-                            <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td><span class="day-out">DAY<br>OUT</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS<br>(BOYS)<br>228</span></td>
                             <td>9-JAN-<br>2025<br>(4:40 PM<br>TO 5:30<br>PM)</td>
                             <td>WORK</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
