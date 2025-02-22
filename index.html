@@ -10,6 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            color: #333333; /* Changed all default black text to light black */
         }
 
         body {
@@ -53,8 +54,8 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 5px; /* Thickness of the line */
-            background-color: #e53935; /* Red color */
+            width: 5px;
+            background-color: #e53935;
             border-radius: 8px 0 0 8px;
         }
 
@@ -73,7 +74,7 @@
 
         .student-info h2 {
             font-size: 1.2rem;
-            color: #333;
+            color: #333333; /* Changed from #333 to maintain consistency */
             margin-bottom: 0.3rem;
         }
 
@@ -103,8 +104,8 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 5px; /* Thickness of the line */
-            background-color: #1976d2; /* Blue color */
+            width: 5px;
+            background-color: #64b5f6; /* Changed from #1976d2 to light blue */
             border-radius: 8px 0 0 8px;
         }
 
@@ -141,11 +142,11 @@
         }
 
         th, td {
-            padding: 0.5rem; /* Reduced padding to make rows shorter */
+            padding: 0.5rem;
             text-align: left;
             border-bottom: 1px solid #ddd;
             font-size: 0.85rem;
-            line-height: 1.2; /* Tighter line spacing */
+            line-height: 1.2;
         }
 
         th {
@@ -156,7 +157,7 @@
         .day-out {
             background: #ff9800;
             color: white;
-            padding: 0.3rem 0.6rem; /* Reduced padding for inline elements */
+            padding: 0.3rem 0.6rem;
             border-radius: 3px;
             font-size: 0.8rem;
             white-space: nowrap;
@@ -173,30 +174,27 @@
         }
 
         .hostel-info {
-            color: #1976d2;
+            color: #064d6a; /* Changed from #1976d2 to light blue */
             font-size: 0.8rem;
         }
 
-        /* Alternating Row Colors */
         tbody tr {
-            height: 40px; /* Set a fixed height for each row to reduce overall height */
+            height: 40px;
         }
         tbody tr:nth-child(odd) {
             background: rgba(242, 242, 242, 255);
         }
 
-        /* Make "Leave From To" column wider */
         td:nth-child(4), th:nth-child(4) {
-            max-width: 250px; /* Increased width for the "Leave From To" column */
-            min-width: 200px; /* Ensure it doesn’t shrink too much */
-            white-space: normal; /* Allow text to wrap if necessary */
-            word-wrap: break-word; /* Ensure long text wraps */
+            max-width: 250px;
+            min-width: 200px;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
-        /* Add space between Leave Type, Status, and Leave From To columns */
-        td:nth-child(2), td:nth-child(3), td:nth-child(4), /* Data cells */
-        th:nth-child(2), th:nth-child(3), th:nth-child(4) { /* Header cells */
-            padding-right: 1rem; /* Add right padding for horizontal spacing */
+        td:nth-child(2), td:nth-child(3), td:nth-child(4),
+        th:nth-child(2), th:nth-child(3), th:nth-child(4) {
+            padding-right: 1rem;
         }
 
         /* Responsive Design */
@@ -222,7 +220,6 @@
                 align-self: center;
             }
 
-            /* Table Styling for Mobile */
             .table-responsive {
                 overflow-x: auto;
             }
@@ -234,9 +231,9 @@
             }
 
             th, td {
-                padding: 0.3rem; /* Even smaller padding on mobile */
+                padding: 0.3rem;
                 font-size: 14px;
-                line-height: 1.1; /* Tighter line spacing on mobile */
+                line-height: 1.1;
             }
 
             th {
@@ -249,7 +246,7 @@
             .day-out {
                 background: #ff9800;
                 color: white;
-                padding: 0.2rem 0.4rem; /* Even smaller padding on mobile */
+                padding: 0.2rem 0.4rem;
                 border-radius: 3px;
                 font-size: 12px;
                 white-space: normal;
@@ -270,7 +267,7 @@
             }
 
             .hostel-info {
-                color: #000000;
+                color: #333333; /* Changed from #000000 to light black */
                 font-size: 12px;
                 line-height: 1.2;
                 font-weight: normal;
@@ -280,17 +277,15 @@
                 word-wrap: break-word;
             }
 
-            /* Adjust "Leave From To" column width on mobile */
             td:nth-child(4), th:nth-child(4) {
-                max-width: 200px; /* Slightly narrower on mobile to fit screen */
-                min-width: 150px; /* Ensure it doesn’t shrink too much on mobile */
+                max-width: 200px;
+                min-width: 150px;
                 white-space: normal;
             }
 
-            /* Add space between columns on mobile (reduced padding for smaller screens) */
             td:nth-child(2), td:nth-child(3), td:nth-child(4),
             th:nth-child(2), th:nth-child(3), th:nth-child(4) {
-                padding-right: 0.5rem; /* Reduced right padding for mobile */
+                padding-right: 0.5rem;
             }
 
             td:nth-child(6) {
@@ -302,7 +297,7 @@
             }
 
             tbody tr {
-                height: 35px; /* Slightly smaller height on mobile */
+                height: 35px;
             }
         }
     </style>
@@ -360,7 +355,7 @@
                         <tr>
                             <td>2</td>
                             <td><span class="day-out">DAY OUT</span></td>
-                            <td class="status-rejected">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
+                            <td class="status-approved">APPROVED<br><span class="hostel-info">BOSE BOYS (BOYS)<br>228-</span></td>
                             <td>21-FEB-<br>2025<br>(4:50 PM<br>TO 5:30<br>PM)</td>
                             <td>HAIRCUT</td>
                             <td>PRADEEP KUMAR<br>9805965420</td>
